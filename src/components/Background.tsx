@@ -1,6 +1,7 @@
-import { useTheme } from "native-base";
 import React from "react";
+
 import { ImageBackground } from "react-native";
+import { useTheme } from "native-base";
 
 import backgroundImg from "../assets/background-galaxy.png";
 

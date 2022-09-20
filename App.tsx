@@ -8,12 +8,11 @@ import {
   Roboto_400Regular,
 } from "@expo-google-fonts/roboto";
 
-import { Background } from "./src/components/Background";
 import { AuthProvider } from "./src/hooks/useAuth";
 
 import { Loading } from "./src/components/Loading";
-import { Login } from "./src/screens/Login";
-import { Home } from "./src/screens/Home";
+
+import Routes from "./src/routes/index.routes";
 
 import { THEME } from "./src/styles/theme";
 
@@ -22,18 +21,15 @@ export default function App() {
 
   return (
     <NativeBaseProvider theme={THEME}>
-      <Background>
-        <AuthProvider>
-          <StatusBar
-            barStyle="light-content"
-            backgroundColor="transparent"
-            translucent
-          />
+      <AuthProvider>
+        <StatusBar
+          barStyle="light-content"
+          backgroundColor="transparent"
+          translucent
+        />
 
-          {fontsLoaded === true ? <Login /> : <Loading />}
-          {/* {fontsLoaded === true ? <Routes /> : <Loading />} */}
-        </AuthProvider>
-      </Background>
+        {fontsLoaded === true ? <Routes /> : <Loading />}
+      </AuthProvider>
     </NativeBaseProvider>
   );
 }

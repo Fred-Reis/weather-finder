@@ -1,16 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { Platform } from "react-native";
 
-import { VStack, useTheme, Text, Center, Image } from "native-base";
 import * as LocalAuthentication from "expo-local-authentication";
-// import { LinearGradient } from "expo-linear-gradient";
+import { VStack, useTheme, Text, Center } from "native-base";
+import LottieView from "lottie-react-native";
 
-// import { Button } from "../components/Button";
-
+import { Background } from "../components/Background";
 import { AppButton } from "../components/AppButton";
 import { useAuth } from "../hooks/useAuth";
 
-// import logo from "../assets/logo.png";
+import loggingAnimation from "../assets/weather-login.json";
 
 export function Login() {
   const [, setIsBiometricSupported] = useState(false);
@@ -38,32 +36,29 @@ export function Login() {
 
   return (
     <VStack flex={1}>
-      {/* <LinearGradient
-        colors={[colors.primary[700], "transparent", colors.primary[700]]}
-        style={{
-          width: variables.width,
-          height:
-            Platform.OS === "android"
-              ? variables.height * 1.1
-              : variables.height,
-          position: "absolute",
-        }}
-      /> */}
+      <Background>
+        <Center h="100%" w="100%">
+          <LottieView
+            source={loggingAnimation}
+            loop
+            autoPlay
+            style={{ width: 430, height: 430 }}
+            resizeMode="cover"
+          />
+          <Text
+            color="white"
+            fontSize="xl"
+            textAlign="center"
+            fontFamily={FONT.HEADING}
+            m={10}
+            mt={0}
+          >
+            Clique no botão abaixo para se autenticar e acessar a aplicação
+          </Text>
 
-      <Center h="100%" w="100%">
-        {/* <Image source={logo} w={150} h={150} alt="logo" /> */}
-        <Text
-          color="white"
-          fontSize="2xl"
-          textAlign="center"
-          fontFamily={FONT.HEADING}
-          m={10}
-        >
-          Clique no botão abaixo para se autenticar e acessar a aplicação
-        </Text>
-
-        <AppButton title="Login" w="60%" onPress={onAuthenticate} />
-      </Center>
+          <AppButton title="Login" w="60%" onPress={onAuthenticate} />
+        </Center>
+      </Background>
     </VStack>
   );
 }
