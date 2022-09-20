@@ -1,18 +1,26 @@
 import React, { useEffect, useState } from "react";
 import { SafeAreaView, Platform, Keyboard } from "react-native";
 
-import { Center, Text, Button, HStack, VStack } from "native-base";
+import {
+  Center,
+  Text,
+  Button,
+  HStack,
+  VStack,
+  Heading,
+  useTheme,
+} from "native-base";
 import { MaterialIcons } from "@expo/vector-icons";
 import LottieView from "lottie-react-native";
 import * as Location from "expo-location";
 
-import loadingAnimation from "../assets/weather-radar.json";
 import errorAnimation from "../assets/cant-find-your-location.json";
+import loadingAnimation from "../assets/weather-radar.json";
 import { WeatherCard } from "../components/WeatherCard";
 import { Input } from "../components/Input";
 
-import { THEME } from "../styles/theme";
 import { API } from "../api";
+import { AppButton } from "../components/AppButton";
 
 export function Home() {
   const [location, setLocation] = useState(null);
@@ -21,10 +29,15 @@ export function Home() {
   const [errorMsg, setErrorMsg] = useState("");
   const [address, setAddress] = useState("");
 
+  const { FONT } = useTheme();
+
   const getCurrentPosition = async (): Promise<void> => {
     setWeather(null);
     setLoading(true);
+    setLocation(null);
+    setAddress("");
     setErrorMsg("");
+    Keyboard.dismiss();
     let { status } = await Location.requestForegroundPermissionsAsync();
     if (status !== "granted") {
       setErrorMsg("Permission to access location was denied");
@@ -78,33 +91,36 @@ export function Home() {
     <SafeAreaView
       style={{
         flex: 1,
-        backgroundColor: "#2a1e2e",
         paddingTop: Platform.OS === "android" ? 35 : 0,
       }}
     >
       <VStack mx={8}>
-        <Text my={3} color="white" fontSize={18}>
+        <Text my={3} color="white" fontSize={18} fontFamily={FONT.HEADING}>
           Pesquisa por Endereço
         </Text>
-        <HStack bg="#2a1e2e">
+        <HStack>
           <Input
+            value={address}
             placeholder="Cidade, sigla País"
             onChangeText={setAddress}
             onSubmitEditing={handleGetWeatherByAddress}
-          />
-          <MaterialIcons
-            name="search"
-            size={40}
-            color="white"
-            onPress={handleGetWeatherByAddress}
+            InputRightElement={
+              <MaterialIcons
+                name="search"
+                size={35}
+                color="white"
+                style={{ marginRight: 10 }}
+                onPress={handleGetWeatherByAddress}
+              />
+            }
           />
         </HStack>
       </VStack>
 
-      <Center flex={1}>
+      <Center flex={1} mt={10}>
         {errorMsg && (
           <>
-            <Text mb={2} color="white" fontSize={18}>
+            <Text mb={2} color="white" fontSize={20} fontFamily={FONT.HEADING}>
               {errorMsg}
             </Text>
             <LottieView
@@ -115,20 +131,13 @@ export function Home() {
               resizeMode="cover"
               speed={1.5}
             />
+            <Text mt={4} color="white" fontSize={20} fontFamily={FONT.HEADING}>
+              Verifique e tente novamente...
+            </Text>
           </>
         )}
 
-        {weather && (
-          <WeatherCard
-            temperature={weather.main.temp}
-            weather={weather.weather[0].description}
-            city={weather.name}
-            country={weather.sys.country}
-            timestamp={weather.dt}
-          />
-        )}
-
-        {loading && (
+        {loading ? (
           <LottieView
             source={loadingAnimation}
             loop
@@ -137,24 +146,41 @@ export function Home() {
             resizeMode="cover"
             speed={1.5}
           />
-        )}
+        ) : (
+          <>
+            {weather ? (
+              <WeatherCard
+                temperature={weather.main.temp}
+                weather={weather.weather[0].description}
+                city={weather.name}
+                country={weather.sys.country}
+                timestamp={weather.dt}
+                icon={weather.weather[0].icon}
+              />
+            ) : (
+              !errorMsg && (
+                <Heading
+                  textAlign="center"
+                  lineHeight={28}
+                  fontSize="lg"
+                  color="white"
+                  fontFamily={FONT.HEADING}
+                  mx={12}
+                  mb={20}
+                >
+                  Digite o Endereço desejado, {"\n"} ou clique no botão abaixo
+                  para buscar o clima na sua localização{" "}
+                </Heading>
+              )
+            )}
 
-        {!loading && (
-          <Button
-            bg="#282929"
-            w={THEME.variables.width / 1.7}
-            my={10}
-            py={5}
-            borderColor="#542bc4"
-            borderWidth={2}
-            rounded={60}
-            onPress={getCurrentPosition}
-            _pressed={{
-              bg: "#282929",
-            }}
-          >
-            Buscar Pela Minha Localização
-          </Button>
+            <AppButton
+              my={10}
+              py={5}
+              onPress={getCurrentPosition}
+              title=" Buscar clima pela localização"
+            />
+          </>
         )}
       </Center>
     </SafeAreaView>
