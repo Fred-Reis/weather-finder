@@ -183,7 +183,7 @@ export function Home() {
                 my={10}
                 py={5}
                 onPress={getCurrentPosition}
-                title=" Buscar clima pela localização"
+                title=" Buscar pela localização"
               />
             </>
           )}
