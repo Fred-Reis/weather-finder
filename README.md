@@ -33,7 +33,7 @@
   <a href="#-tecnologias-e-bibliotecas">Tecnologias e Bibliotecas</a>&nbsp;&nbsp;-&nbsp;
   <a href="#-testes">Testes</a>&nbsp;&nbsp;-&nbsp;
   <a href="#-roadmap">Roadmap</a>&nbsp;&nbsp;-&nbsp;
-  <a href="#-rodando-o-projeto">Rodando o projeto</a>
+  <a href="#-executando-o-projeto">Executando o projeto</a>
 
 </div>
 
@@ -119,7 +119,7 @@ $ yarn test --coverage
 
 <br/>
 
-## 🏁 Rodando o projeto
+## 🏁 Executando o projeto
 
 1 - Para executar pela primeira vez o seu projeto será necessário a criação de uma pasta.
 
