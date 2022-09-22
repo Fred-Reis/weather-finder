@@ -83,13 +83,14 @@ Esse projet foi construido usnado [**React Native**](https://reactnative.dev/) e
 
 Some of technologies and libraries used at this project:
 
-- [**Expo**](https://expo.dev/) ;
+- [**Expo**](https://expo.dev/);
 - [**typescript**](https://www.typescriptlang.org/);
 - [**NativeBase**](https://nativebase.io/) => NativeBase é uma biblioteca de componentes para construir universal design systems;
 - [**Lottie**](https://github.com/lottie-react-native/lottie-react-native) => Para animações;
 - [**Async Storage**](https://react-native-async-storage.github.io/async-storage/) => Para armazenamento de dados no React Native.;
 - [**expo-local-authentication**](https://docs.expo.dev/versions/latest/sdk/local-authentication) => Para permitir usuários acessar o app usando FaceID e TouchID (iOS) ou leitor de digitais (Android).;
 - [**Jest**](https://jestjs.io/) => Para testes.
+- [**expo-location**](https://docs.expo.dev/versions/latest/sdk/location/) => Para acessar a api de geolocalização do dispositivo.
 
 <br/>
 
