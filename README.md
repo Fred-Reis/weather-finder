@@ -8,6 +8,32 @@
    Weather Finder mobile app
 </h2>
 
+<hr/>
+
+<br/>
+
+<div align="center" style="margin-bottom:10px; margin:auto" >
+  <img style="margin-bottom:10px; width:150px; height:150px alt="screenshot"
+    src="src/assets/screenshot-1.png"
+  />
+  <img style="margin-bottom:10px; width:150px; height:150px alt="screenshot"
+    src="src/assets/screenshot-2.png"
+  />
+  <img style="margin-bottom:10px; width:150px; height:150px alt="screenshot"
+    src="src/assets/screenshot-3.png"
+  />
+  <img style="margin-bottom:10px; width:150px; height:150px alt="screenshot"
+    src="src/assets/screenshot-4.png"
+  />
+  <img style="margin-bottom:10px; width:150px; height:150px alt="screenshot"
+    src="src/assets/screenshot-5.png"
+  />
+</div>
+
+<hr/>
+
+<br/>
+
 <div align="center">
 
   <img alt="language version" src="https://img.shields.io/badge/React Native-v_0.69.5-61dafb?logo=react">
