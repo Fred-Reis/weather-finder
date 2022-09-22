@@ -33,9 +33,10 @@ export function Home() {
     setErrorMsg("");
     Keyboard.dismiss();
     let { status } = await Location.requestForegroundPermissionsAsync();
+
     if (status !== "granted") {
-      setErrorMsg("Permission to access location was denied");
-      return;
+      setErrorMsg("Permissão para acessar a localização negada!");
+      return setLoading(false);
     }
 
     let location = await Location.getCurrentPositionAsync({});
@@ -116,7 +117,9 @@ export function Home() {
           {errorMsg && (
             <>
               <Text
+                textAlign="center"
                 mb={2}
+                mx={12}
                 color="white"
                 fontSize={20}
                 fontFamily={FONT.HEADING}
@@ -132,7 +135,9 @@ export function Home() {
                 speed={1.5}
               />
               <Text
+                textAlign="center"
                 mt={4}
+                mx={12}
                 color="white"
                 fontSize={20}
                 fontFamily={FONT.HEADING}

@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import { NativeBaseProvider, StatusBar } from "native-base";
+import * as SplashScreen from "expo-splash-screen";
 
 import {
   useFonts,
@@ -18,6 +19,14 @@ import { THEME } from "./src/styles/theme";
 
 export default function App() {
   const [fontsLoaded] = useFonts({ Roboto_400Regular, Roboto_700Bold });
+
+  SplashScreen.preventAutoHideAsync();
+
+  useEffect(() => {
+    setTimeout(async () => {
+      await SplashScreen.hideAsync();
+    }, 2000);
+  }, []);
 
   return (
     <NativeBaseProvider theme={THEME}>

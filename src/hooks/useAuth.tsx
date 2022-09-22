@@ -13,7 +13,7 @@ interface AuthContextState {
 const AuthContext = createContext<AuthContextState>({} as AuthContextState);
 
 const AuthProvider = ({ children }) => {
-  const { getItem, setItem } = useAsyncStorage("@storage_play_series:auth");
+  const { getItem, setItem } = useAsyncStorage("@storage_weather-finder:auth");
 
   const [token, setToken] = useState(() => {
     var item: any;
@@ -39,7 +39,7 @@ const AuthProvider = ({ children }) => {
   }, []);
 
   const signOut = useCallback(async () => {
-    await AsyncStorage.removeItem("@storage_play_series:auth");
+    await AsyncStorage.removeItem("@storage_weather-finder:auth");
 
     setToken(false);
   }, []);
