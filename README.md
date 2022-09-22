@@ -49,7 +49,7 @@ Esse projet foi construido usnado [**React Native**](https://reactnative.dev/) e
 - Para buscar os dados climáticos foi sugerida a API do Open Weather. 
 
 - [Link da API Open Weather](https://openweathermap.org/api)
-- [Download o Android app clicando aqui e teste no seu dispositivo](https://github.com/Fred-Reis/weather-finder/raw/main/android/app/build/outputs/apk/release/app-release.apk)
+- [Baixe o Android app clicando aqui e teste no seu dispositivo](https://github.com/Fred-Reis/weather-finder/raw/main/android/app/build/outputs/apk/release/app-release.apk)
 
 > Atenção - Se o link acima não funcionar, você pode encontrar o APK para teste nesse caminho: `android/app/build/outputs/apk/release/app-release.apk`
 
