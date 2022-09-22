@@ -27,7 +27,7 @@
 <div align="center">
 
   <a href="#-sobre-o-projeto">Sobre o projeto</a>&nbsp;&nbsp;-&nbsp;
-  <a href="#-funcionalidades-obrigatorias">Funcionalidades Obrigatórias</a>&nbsp;&nbsp;-&nbsp;
+  <a href="#-funcionalidades-obrigatórias">Funcionalidades Obrigatórias</a>&nbsp;&nbsp;-&nbsp;
   <a href="#-funcionalidades-bonus">Funcionalidades Bonus</a>&nbsp;&nbsp;-&nbsp;
   <a href="#-demo">Demo</a>&nbsp;&nbsp;-&nbsp;
   <a href="#-technologias-e-bibliotecas">Technologias e Bibliotecas</a>&nbsp;&nbsp;-&nbsp;
