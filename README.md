@@ -30,7 +30,7 @@
   <a href="#-funcionalidades-obrigatórias">Funcionalidades Obrigatórias</a>&nbsp;&nbsp;-&nbsp;
   <a href="#-funcionalidades-bonus">Funcionalidades Bonus</a>&nbsp;&nbsp;-&nbsp;
   <a href="#-demo">Demo</a>&nbsp;&nbsp;-&nbsp;
-  <a href="#-technologias-e-bibliotecas">Technologias e Bibliotecas</a>&nbsp;&nbsp;-&nbsp;
+  <a href="#-tecnologias-e-bibliotecas">Tecnologias e Bibliotecas</a>&nbsp;&nbsp;-&nbsp;
   <a href="#-testes">Testes</a>&nbsp;&nbsp;-&nbsp;
   <a href="#-roadmap">Roadmap</a>&nbsp;&nbsp;-&nbsp;
   <a href="#-rodando-o-projeto">Rodando o projeto</a>
@@ -79,7 +79,7 @@ Esse projet foi construido usnado [**React Native**](https://reactnative.dev/) e
 
 <br/>
 
-## 🛠 Technologias e Bibliotecas
+## 🛠 Tecnologias e Bibliotecas
 
 Some of technologies and libraries used at this project:
 
